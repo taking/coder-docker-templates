@@ -13,6 +13,8 @@ curl -L "https://github.com/taking/coder-docker-templates/releases/download/v0.1
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/donjayamanne.githistory-0.6.20.vsix
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/seatonjiang.gitmoji-vscode-1.2.4.vsix
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/eamodio.gitlens-2023.10.305.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/Gruntfuggly.todo-tree-0.0.226.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/usernamehw.errorlens-3.14.0.vsix
 
 # Code Server
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/RoscoP.ActiveFileInStatusBar-1.0.3.vsix
