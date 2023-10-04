@@ -28,3 +28,4 @@ WORKDIR /home/${USER}
 
 COPY mods .mods
 RUN sudo chmod -R 777 .mods
+RUN mkdir workspaces
