@@ -3,12 +3,27 @@
 mkdir -p /tmp/extensions
 curl -L "https://github.com/taking/coder-docker-templates/releases/download/v0.1/extensions.tgz" | tar -C /tmp/extensions -xzvf -
 
-/tmp/code-server/bin/code-server --install-extension /tmp/extensions/donjayamanne.githistory-0.6.20.vsix
+
+# Dev
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/vincaslt.highlight-matching-tag-0.11.0.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/naumovs.color-highlight-2.5.0.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/dzhavat.bracket-pair-toggler-0.0.3.vsix
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/formulahendry.auto-close-tag-0.5.14.vsix
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/formulahendry.auto-rename-tag-0.1.10.vsix
-/tmp/code-server/bin/code-server --install-extension /tmp/extensions/mkxml.vscode-filesize-3.1.0.vsix
-/tmp/code-server/bin/code-server --install-extension /tmp/extensions/oderwat.indent-rainbow-8.3.1.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/donjayamanne.githistory-0.6.20.vsix
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/seatonjiang.gitmoji-vscode-1.2.4.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/eamodio.gitlens-2023.10.305.vsix
+
+# Code Server
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/RoscoP.ActiveFileInStatusBar-1.0.3.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/oderwat.indent-rainbow-8.3.1.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/mkxml.vscode-filesize-3.1.0.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/SimonSiefke.svg-preview-2.8.3.vsix
+
+# Language
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/MS-CEINTL.vscode-language-pack-ko-1.83.2023092709.vsix
+
+# Theme & Icon
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/tal7aouy.theme-3.1.0.vsix
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/vscode-icons-team.vscode-icons-12.5.0.vsix
 
@@ -45,6 +60,20 @@ cat <<EOF > $HOME/.local/share/code-server/User/settings.json
   // Theme & Icon Stop
 
   // "editor.formatOnSave": false,
+
+
+  // Gitlens Start
+  "gitlens.changes.toggleMode": "file",
+  "gitlens.defaultDateLocale": "ko-KR",
+  "gitlens.defaultDateFormat": "YYYY-MM-DD H:MM:mm",
+  "gitlens.codeLens.scopes": [
+    "document",
+    "containers"
+  ],
+  "gitlens.advanced.messages": {
+      "suppressShowKeyBindingsNotice": true
+  },
+  // Gitlens End
 
   // auto-close-tag Start
   "auto-close-tag.SublimeText3Mode": true,
