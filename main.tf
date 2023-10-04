@@ -33,8 +33,14 @@ resource "coder_agent" "main" {
     curl -fsSL https://code-server.dev/install.sh | sh -s -- --method=standalone --prefix=/tmp/code-server --version 4.11.0
     /tmp/code-server/bin/code-server --auth none --port 13337 >/tmp/code-server.log 2>&1 &
 
+    # install oh-my-zsh
+    /home/${data.coder_workspace.me.owner}/.mods/oh-my-zsh.sh
+
     # install java
-    /home/${data.coder_workspace.me.owner}/mods/java.sh
+    /home/${data.coder_workspace.me.owner}/.mods/java.sh
+
+    # install vs-code-extensions
+    /home/${data.coder_workspace.me.owner}/.mods/code-extension.sh
   EOT
 
   # These environment variables allow you to make Git commits right away after creating a
