@@ -25,6 +25,15 @@ data "coder_workspace" "me" {
 resource "coder_agent" "main" {
   arch                   = data.coder_provisioner.me.arch
   os                     = "linux"
+
+  display_apps {
+    vscode          = true
+    vscode_insiders = false
+    web_terminal    = true
+    ssh_helper      = false
+    port_forwarding_helper = true
+  }
+
   startup_script_timeout = 180
   startup_script         = <<-EOT
     set -e
@@ -41,6 +50,13 @@ resource "coder_agent" "main" {
 
     # install vs-code-extensions
     /home/${data.coder_workspace.me.owner}/.mods/code-extension.sh
+
+    # install node
+    #/home/${data.coder_workspace.me.owner}/.mods/node.sh
+
+    # install golang
+    #/home/${data.coder_workspace.me.owner}/.mods/golang.sh
+
   EOT
 
   # These environment variables allow you to make Git commits right away after creating a
@@ -125,7 +141,7 @@ resource "coder_app" "code-server" {
   agent_id     = coder_agent.main.id
   slug         = "code-server"
   display_name = "code-server"
-  url          = "http://localhost:13337/?folder=/home/${local.username}/workspaces"
+  url          = "http://localhost:13337/?folder=/home/${local.username}"
   icon         = "/icon/code.svg"
   subdomain    = false
   share        = "owner"
@@ -175,6 +191,9 @@ resource "docker_image" "main" {
   triggers = {
     dir_sha1 = sha1(join("", [for f in fileset(path.module, "build/*") : filesha1(f)]))
   }
+
+  # Keep alive for other workspaces to use upon deletion
+  keep_locally = true
 }
 
 resource "docker_container" "workspace" {
@@ -184,6 +203,7 @@ resource "docker_container" "workspace" {
   name = "coder-${data.coder_workspace.me.owner}-${lower(data.coder_workspace.me.name)}"
   # Hostname makes the shell more user friendly: coder@my-workspace:~$
   hostname = data.coder_workspace.me.name
+  dns      = ["8.8.8.8"]
   # Use the docker gateway if the access URL is 127.0.0.1
   entrypoint = ["sh", "-c", replace(coder_agent.main.init_script, "/localhost|127\\.0\\.0\\.1/", "host.docker.internal")]
   env        = ["CODER_AGENT_TOKEN=${coder_agent.main.token}"]
