@@ -12,9 +12,13 @@ curl -L "https://github.com/taking/coder-docker-templates/releases/download/v0.1
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/formulahendry.auto-rename-tag-0.1.10.vsix
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/donjayamanne.githistory-0.6.20.vsix
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/seatonjiang.gitmoji-vscode-1.2.4.vsix
-/tmp/code-server/bin/code-server --install-extension /tmp/extensions/eamodio.gitlens-2023.10.305.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/eamodio.gitlens-13.5.0.vsix
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/Gruntfuggly.todo-tree-0.0.226.vsix
-/tmp/code-server/bin/code-server --install-extension /tmp/extensions/usernamehw.errorlens-3.14.0.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/wayou.vscode-todo-highlight-1.0.5.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/usernamehw.errorlens-3.8.0.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/redhat.vscode-yaml-1.14.0.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/vscjava.vscode-gradle-3.12.2023092801.vsix
+
 
 # Code Server
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/RoscoP.ActiveFileInStatusBar-1.0.3.vsix
@@ -23,16 +27,16 @@ curl -L "https://github.com/taking/coder-docker-templates/releases/download/v0.1
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/SimonSiefke.svg-preview-2.8.3.vsix
 
 # Language
-/tmp/code-server/bin/code-server --install-extension /tmp/extensions/MS-CEINTL.vscode-language-pack-ko-1.83.2023092709.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/MS-CEINTL.vscode-language-pack-ko-1.76.0.vsix
 
 # Theme & Icon
-/tmp/code-server/bin/code-server --install-extension /tmp/extensions/tal7aouy.theme-3.1.0.vsix
+/tmp/code-server/bin/code-server --install-extension /tmp/extensions/zhuangtongfa.Material-theme-3.16.0.vsix
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/vscode-icons-team.vscode-icons-12.5.0.vsix
 
 cat <<EOF > $HOME/.local/share/code-server/User/settings.json
 {
   "editor.fontFamily": "Hack, D2Coding, Consolas, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 17,
+  "editor.fontSize": 14,
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "editor.wrappingIndent": "indent",
@@ -49,20 +53,21 @@ cat <<EOF > $HOME/.local/share/code-server/User/settings.json
   "editor.suggest.showStatusBar": true,
   "files.eol": "\n",
   "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontWeightBold": "bold",
   "ActiveFileInStatusBar.enable": true,
   "ActiveFileInStatusBar.fullpath": true,
   "ActiveFileInStatusBar.revealFile": false,
   
   // Theme & Icon Start
   "workbench.iconTheme": "vscode-icons",
-  "workbench.colorTheme": "Theme"
+  "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.statusBar.visible": true,
   "workbench.activityBar.visible": true,
   "vsicons.dontShowNewVersionMessage": true,  // vscode-icons
   // Theme & Icon Stop
 
   // "editor.formatOnSave": false,
-
+  "security.workspace.trust.untrustedFiles": "open",
 
   // Gitlens Start
   "gitlens.changes.toggleMode": "file",
@@ -111,10 +116,11 @@ cat <<EOF > $HOME/.local/share/code-server/User/settings.json
       "description_zh_cn": "크리티컬 긴급수정"
     }
   ],
-  "remote.SSH.remotePlatform": {"coder-vscode--taking--nw--main":"linux","coder-vscode--taking--nw":"linux","coder-vscode--taking--java":"linux"},
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  }
   // Gitmoji End
+
+  // Google Style Guide (Java) Start
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "java.format.settings.profile": "GoogleStyle"
+  // Google Style Guide End
 }
 EOF

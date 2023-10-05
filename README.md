@@ -13,6 +13,12 @@ icon: /icon/docker.png
 
 Edit the `Dockerfile`, `mods`, `main.tf` and run `yes | coder templates push` to update workspaces.
 
+가능한 모드
+- oh-my-zsh.sh (default)
+- code-extension.sh (default)
+- golang.sh
+- java.sh
+- node.sh
 
 main.tf
 ```
