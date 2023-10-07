@@ -14,4 +14,12 @@ else
   curl -fsSL https://raw.githubusercontent.com/tj/n/master/bin/n | bash -s lts
   npm install -g http-server
   npm install -g yarn
+
+  curl -fsSL https://deno.land/x/install/install.sh | sh
+  curl -fsSL https://bun.sh/install | bash
+
+  cat <<'EOF' >> ~/.zshrc
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+EOF
 fi
