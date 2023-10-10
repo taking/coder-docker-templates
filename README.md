@@ -30,3 +30,11 @@ main.tf
 
 Create Workspace `yes | coder create --template="docker" {workspace_name}`
 
+
+## etc
+java 의 경우 다음의 확장 기능을 설치하시오.
+- Extension Pack for Java
+- Gradle for Java
+- Language Support for Java(TM) by Red Hat
+- Lombok Annotations Supports for VS Code
+- Spring Boot Extension Pack
