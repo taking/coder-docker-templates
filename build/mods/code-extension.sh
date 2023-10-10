@@ -22,8 +22,7 @@ else
   /tmp/code-server/bin/code-server --install-extension /tmp/extensions/wayou.vscode-todo-highlight-1.0.5.vsix
   /tmp/code-server/bin/code-server --install-extension /tmp/extensions/usernamehw.errorlens-3.8.0.vsix
   /tmp/code-server/bin/code-server --install-extension /tmp/extensions/redhat.vscode-yaml-1.14.0.vsix
-  /tmp/code-server/bin/code-server --install-extension /tmp/extensions/vscjava.vscode-gradle-3.12.2023092801.vsix
-  
+  /tmp/code-server/bin/code-server --install-extension /tmp/extensions/mhutchie.git-graph-1.30.0.vsix
   
   # Code Server
   /tmp/code-server/bin/code-server --install-extension /tmp/extensions/RoscoP.ActiveFileInStatusBar-1.0.3.vsix
@@ -53,14 +52,14 @@ else
     "usernamehw.errorlens",
     "eamodio.gitlens",
     "redhat.vscode-yaml",
-    "vscjava.vscode-gradle",
     "RoscoP.ActiveFileInStatusBar",
     "oderwat.indent-rainbow",
     "mkxml.vscode-filesize",
     "SimonSiefke.svg-preview",
     "MS-CEINTL.vscode-language-pack-ko",
     "zhuangtongfa.Material-theme",
-    "vscode-icons-team.vscode-icons"
+    "vscode-icons-team.vscode-icons",
+    "mhutchie.git-graph"
   ],
 
   "editor.fontFamily": "Hack, D2Coding, Consolas, Menlo, Monaco, 'Courier New', monospace",
@@ -177,7 +176,8 @@ touch $HOME/.vscode-server/data/Machine/settings.json
     "SimonSiefke.svg-preview",
     "MS-CEINTL.vscode-language-pack-ko",
     "zhuangtongfa.Material-theme",
-    "vscode-icons-team.vscode-icons"
+    "vscode-icons-team.vscode-icons",
+    "mhutchie.git-graph"
   ],
 
   "editor.fontFamily": "Hack, D2Coding, Consolas, Menlo, Monaco, 'Courier New', monospace",

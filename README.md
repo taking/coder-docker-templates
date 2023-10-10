@@ -38,3 +38,9 @@ java 의 경우 다음의 확장 기능을 설치하시오.
 - Language Support for Java(TM) by Red Hat
 - Lombok Annotations Supports for VS Code
 - Spring Boot Extension Pack
+
+node 의 경우 다음의 확장 기능을 설치하시오.
+- Auto Import
+- Import Cost
+- Prettier - Code formatter
+- Version Lens
