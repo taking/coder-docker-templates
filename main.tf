@@ -46,13 +46,13 @@ resource "coder_agent" "main" {
     /home/${data.coder_workspace.me.owner}/.mods/oh-my-zsh.sh
 
     # install java
-    #/home/${data.coder_workspace.me.owner}/.mods/java.sh
+    /home/${data.coder_workspace.me.owner}/.mods/java.sh
 
     # install vs-code-extensions
     /home/${data.coder_workspace.me.owner}/.mods/code-extension.sh
 
     # install node
-    /home/${data.coder_workspace.me.owner}/.mods/node.sh
+    #/home/${data.coder_workspace.me.owner}/.mods/node.sh
 
     # install golang
     #/home/${data.coder_workspace.me.owner}/.mods/golang.sh

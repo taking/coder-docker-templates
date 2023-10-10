@@ -33,7 +33,7 @@ curl -L "https://github.com/taking/coder-docker-templates/releases/download/v0.1
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/zhuangtongfa.Material-theme-3.16.0.vsix
 /tmp/code-server/bin/code-server --install-extension /tmp/extensions/vscode-icons-team.vscode-icons-12.5.0.vsix
 
-cat <<EOF > $HOME/.local/share/code-server/User/settings.json
+cat <<EOF > $HOME/.vscode-server/data/Machine/settings.json
 {
  "remote.SSH.defaultExtensions": [
     "vincaslt.highlight-matching-tag",
