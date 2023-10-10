@@ -45,6 +45,7 @@ cat <<EOF > $HOME/.vscode-server/data/Machine/settings.json
     "seatonjiang.gitmoji-vscode",
     "Gruntfuggly.todo-tree",
     "wayou.vscode-todo-highlight",
+    "usernamehw.errorlens",
     "eamodio.gitlens",
     "redhat.vscode-yaml",
     "vscjava.vscode-gradle",
