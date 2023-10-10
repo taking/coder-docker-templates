@@ -35,7 +35,7 @@ curl -L "https://github.com/taking/coder-docker-templates/releases/download/v0.1
 
 cat <<EOF > $HOME/.local/share/code-server/User/settings.json
 {
-  "remote.SSH.defaultExtensions": [
+ "remote.SSH.defaultExtensions": [
     "vincaslt.highlight-matching-tag",
     "naumovs.color-highlight",
     "dzhavat.bracket-pair-toggler",
@@ -47,7 +47,14 @@ cat <<EOF > $HOME/.local/share/code-server/User/settings.json
     "wayou.vscode-todo-highlight",
     "eamodio.gitlens",
     "redhat.vscode-yaml",
-    "vscjava.vscode-gradle"
+    "vscjava.vscode-gradle",
+    "RoscoP.ActiveFileInStatusBar",
+    "oderwat.indent-rainbow",
+    "mkxml.vscode-filesize",
+    "SimonSiefke.svg-preview",
+    "MS-CEINTL.vscode-language-pack-ko",
+    "zhuangtongfa.Material-theme",
+    "vscode-icons-team.vscode-icons"
   ],
 
   "editor.fontFamily": "Hack, D2Coding, Consolas, Menlo, Monaco, 'Courier New', monospace",
