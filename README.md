@@ -44,3 +44,7 @@ node 의 경우 다음의 확장 기능을 설치하시오.
 - Import Cost
 - Prettier - Code formatter
 - Version Lens
+- HTML Snippets
+- ESLint
+- HTML CSS Support
+- CSS Peek

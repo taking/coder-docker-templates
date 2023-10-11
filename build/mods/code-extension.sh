@@ -29,6 +29,7 @@ else
   /tmp/code-server/bin/code-server --install-extension /tmp/extensions/oderwat.indent-rainbow-8.3.1.vsix
   /tmp/code-server/bin/code-server --install-extension /tmp/extensions/mkxml.vscode-filesize-3.1.0.vsix
   /tmp/code-server/bin/code-server --install-extension /tmp/extensions/SimonSiefke.svg-preview-2.8.3.vsix
+  /tmp/code-server/bin/code-server --install-extension /tmp/extensions/formulahendry.terminal-0.0.10.vsix
   
   # Language
   /tmp/code-server/bin/code-server --install-extension /tmp/extensions/MS-CEINTL.vscode-language-pack-ko-1.76.0.vsix
@@ -59,7 +60,8 @@ else
     "MS-CEINTL.vscode-language-pack-ko",
     "zhuangtongfa.Material-theme",
     "vscode-icons-team.vscode-icons",
-    "mhutchie.git-graph"
+    "mhutchie.git-graph",
+    "formulahendry.terminal"
   ],
 
   "editor.fontFamily": "Hack, D2Coding, Consolas, Menlo, Monaco, 'Courier New', monospace",
@@ -177,7 +179,8 @@ touch $HOME/.vscode-server/data/Machine/settings.json
     "MS-CEINTL.vscode-language-pack-ko",
     "zhuangtongfa.Material-theme",
     "vscode-icons-team.vscode-icons",
-    "mhutchie.git-graph"
+    "mhutchie.git-graph",
+    "formulahendry.terminal"
   ],
 
   "editor.fontFamily": "Hack, D2Coding, Consolas, Menlo, Monaco, 'Courier New', monospace",
