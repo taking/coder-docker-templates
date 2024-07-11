@@ -251,33 +251,81 @@ else
   cd ${local.folder_name}
 fi
 
-# install oh-my-zsh from container image
+# Install oh-my-zsh from container image
 curl -fsSL https://raw.githubusercontent.com/taking/taking/main/mySettings/scripts/ohmyzsh_install.sh | bash
 
-# install language from container image
-if [[ ${data.coder_parameter.language.value == "python"} ]]; then
-  # pass
-elif [[ ${data.coder_parameter.language.value == "go"} ]]; then  
+# Function to install Python (placeholder)
+install_python() {
+  echo "Python installation is not defined in this script."
+}
+
+# Function to install Go
+install_go() {
   curl -fsSL https://raw.githubusercontent.com/taking/taking/main/mySettings/scripts/go_install.sh | bash
   go install -v golang.org/x/tools/gopls@latest
-elif [[ ${data.coder_parameter.language.value == "rust"} ]]; then
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-elif [[ ${data.coder_parameter.language.value == "java"} ]]; then
-  curl -fsSL https://raw.githubusercontent.com/taking/taking/main/mySettings/scripts/java21_install.sh | bash
-elif [[ ${data.coder_parameter.language.value == "node"} ]]; then
-  curl -fsSL https://raw.githubusercontent.com/tj/n/master/bin/n | bash -s 20.15.1
-fi
+}
 
-# # install language extensions from container image
-# if [[ ${data.coder_parameter.language.value == "copilot"} ]]; then
-#   /tmp/code-server/bin/code-server --install-extension /coder/vsix/GitHub.copilot.vsix
-#   /tmp/code-server/bin/code-server --install-extension /coder/vsix/GitHub.copilot-chat.vsix
-# elif [[ ${data.coder_parameter.language.value == "aws"} ]]; then
-#   /tmp/code-server/bin/code-server --install-extension /coder/vsix/AmazonWebServices.aws-toolkit-vscode.vsix
-# elif [[ ${data.coder_parameter.language.value == "tabnine"} ]]; then
-#   /tmp/code-server/bin/code-server --install-extension /coder/vsix/TabNine.tabnine-vscode.vsix
-# fi
-  EOT  
+# Function to install Rust
+install_rust() {
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+}
+
+# Function to install Java
+install_java() {
+  curl -fsSL https://raw.githubusercontent.com/taking/taking/main/mySettings/scripts/java21_install.sh | bash
+}
+
+# Function to install Node.js
+install_node() {
+  curl -fsSL https://raw.githubusercontent.com/tj/n/master/bin/n | bash -s 20.15.1
+}
+
+# Install language from container image
+case "${data.coder_parameter.language.value}" in
+  "python")
+    install_python
+    ;;
+  "go")
+    install_go
+    ;;
+  "rust")
+    install_rust
+    ;;
+  "java")
+    install_java
+    ;;
+  "node")
+    install_node
+    ;;
+  *)
+    echo "Unsupported language: ${data.coder_parameter.language.value}"
+    ;;
+esac
+
+Function to install Base VS Code Extenstions
+ext_install_base() {
+  curl -fsSL https://raw.githubusercontent.com/taking/taking/main/mySettings/scripts/vs_code_ext_install.sh | bash
+}
+
+ext_install_base
+
+# # Install language from container image
+# case "${data.coder_parameter.language.value}" in
+#   "python")
+#     ;;
+#   "go")
+#     ;;
+#   "rust")
+#     ;;
+#   "java")
+#     ;;
+#   "node")
+#     ;;
+#   *)
+#     echo "Unsupported language: ${data.coder_parameter.language.value}"
+#     ;;
+# esac
+  EOT
 }
 
 # code-server
