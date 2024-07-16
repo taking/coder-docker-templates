@@ -243,12 +243,16 @@ then
 else
   if [[ ! -d "${local.folder_name}" ]] 
   then
+    mkdir -p $HOME/workspaces
+
     echo "Cloning git repo..."
     git clone ${data.coder_parameter.repo.value}
+
+    mv $HOME/${local.folder_name} $HOME/workspaces/${local.folder_name}
   else
     echo "Repo ${data.coder_parameter.repo.value} already exists. Will not reclone"
   fi
-  cd ${local.folder_name}
+  cd $HOME/workspaces/${local.folder_name}
 fi
 
 # Install oh-my-zsh from container image
